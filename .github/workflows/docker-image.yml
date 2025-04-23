@@ -22,4 +22,5 @@ jobs:
         docker build -t mydemoimg .
     - name: run image
       run: |
-        docker run -d -p 80:80 mydemoimg
+        docker rm -f demo
+        docker run -d --name demo -p 80:80 mydemoimg
